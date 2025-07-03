@@ -1,66 +1,165 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Product Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern, feature-rich product management application built with Laravel 10, Livewire 3, PostgreSQL, and Tailwind CSS. This application provides a sleek dark-themed interface for managing products with full CRUD operations and image upload capabilities.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **🔥 Modern Dark UI**: Sleek dark theme with orange accents and gradient effects
+- **📦 Product Management**: Complete CRUD operations for products
+- **🖼️ Image Upload**: Optional image upload with preview and validation
+- **⚡ Real-time Updates**: Seamless user experience with Livewire 3
+- **📱 Responsive Design**: Mobile-friendly interface using Tailwind CSS
+- **🔍 Form Validation**: Client and server-side validation
+- **💾 PostgreSQL Database**: Robust database with proper relationships
+- **🚀 Production Ready**: Configured for deployment on Render
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 10
+- **Frontend**: Livewire 3 + Tailwind CSS 3.0
+- **Database**: PostgreSQL
+- **Build Tool**: Vite
+- **File Storage**: Laravel Storage with Symbolic Links
+- **PHP Version**: 8.1+
 
-## Learning Laravel
+## 📋 Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Before you begin, ensure you have the following installed:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 8.1 or higher
+- Composer
+- Node.js & NPM
+- PostgreSQL
+- Git
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Installation
 
-## Laravel Sponsors
+### 1. Clone the Repository
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+https://github.com/RitikShahi/Product_Management_System.git
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 2. Install Dependencies
+Install PHP dependencies
+composer install
+Install Node.js dependencies
+npm install
 
-## Contributing
+### 3. Environment Setup
+Copy environment file
+cp .env.example .env
+Generate application key
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Database Configuration
 
-## Code of Conduct
+Update your `.env` file with PostgreSQL credentials:
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=product_management
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Create the database:
 
-## License
+### 5. Run Migrations
+php artisan migrate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### 6. Create Storage Link
+php artisan storage:link
+
+
+For development
+npm run dev
+php artisan serve
+For production
+npm run build
+
+
+Visit `http://127.0.0.1:8000` to access the application.
+
+## 📖 Usage
+
+### Adding Products
+1. Click the **"Add New Product"** button
+2. Fill in the product details:
+   - **Name**: Product name (minimum 3 characters)
+   - **Description**: Product description (minimum 10 characters)
+   - **Price**: Product price (must be positive)
+   - **Image**: Optional product image (max 2MB)
+3. Click **"Save Product"**
+
+### Editing Products
+1. Click the **"Edit"** button next to any product
+2. Modify the details in the form
+3. Upload a new image if desired (optional)
+4. Click **"Update Product"**
+
+### Deleting Products
+1. Click the **"Delete"** button next to any product
+2. Confirm deletion in the dialog
+3. The product and its associated image will be permanently removed
+
+## 🏗️ Project Structure
+
+├── app/
+│ ├── Livewire/
+│ │ └── ProductManager.php # Main Livewire component
+│ ├── Models/
+│ │ └── Product.php # Product model
+│ └── Providers/
+│ └── AppServiceProvider.php # Service provider with HTTPS config
+├── database/
+│ ├── migrations/
+│ │ ├── create_products_table.php # Products table migration
+│ │ └── add_image_to_products_table.php # Image column migration
+│ └── seeders/
+│ └── ProductSeeder.php # Sample data seeder
+├── resources/
+│ ├── css/
+│ │ └── app.css # Tailwind CSS configuration
+│ ├── js/
+│ │ └── app.js # JavaScript entry point
+│ └── views/
+│ ├── components/layouts/
+│ │ └── app.blade.php # Main application layout
+│ └── livewire/
+│ └── product-manager.blade.php # Product management interface
+├── routes/
+│ └── web.php # Application routes
+├── public/storage/ # Symlinked storage directory
+└── storage/app/public/products/ # Uploaded product images
+
+
+
+## 🎨 UI/UX Features
+
+- **Dark Theme**: Modern dark interface with gray and black gradients
+- **Orange Accents**: Consistent orange color scheme for buttons and highlights
+- **Responsive Grid**: Adaptive layout that works on all screen sizes
+- **Smooth Animations**: Hover effects and transitions for better user experience
+- **Icon Integration**: SVG icons throughout the interface
+- **Image Previews**: Real-time image preview during upload
+- **Loading States**: Visual feedback during form submissions
+
+## 🔧 Configuration
+
+### Image Upload Settings
+- **Maximum file size**: 2MB
+- **Allowed formats**: JPG, PNG, GIF, SVG
+- **Storage location**: `storage/app/public/products/`
+- **Public access**: Via symbolic link at `public/storage/`
+
+### Database Schema
+products (
+id BIGSERIAL PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+description TEXT NOT NULL,
+price DECIMAL(10,2) NOT NULL,
+image VARCHAR(255) NULL,
+created_at TIMESTAMP,
+updated_at TIMESTAMP
